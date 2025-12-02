@@ -1,0 +1,367 @@
+.poster {
+  width: 1920px;
+  height: 1080px;
+  background: #fff;
+  margin: 0 auto; /* 가운데 정렬하고 싶으면 */
+}
+
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR",
+    sans-serif;
+}
+
+/* ▶ 배경/아트보드 너비 고정 */
+.poster {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: #fff;
+  overflow: visible;
+}
+
+/* ---- 레이어 공통 ---- */
+.poster img {
+  position: absolute;
+  display: block;
+}
+
+/* 레이어 순서(대략적인 z-index) */
+.stickerpairs {
+  z-index: 1;
+}
+
+.kurlybg {
+  z-index: 2;
+}
+
+.main-onsale,
+.main-bf,
+.main-date,
+.on,
+.bf,
+.date {
+  z-index: 3;
+}
+
+.cartshadow {
+  z-index: 4;
+}
+
+.cart {
+  z-index: 5;
+}
+
+.kurlyqr,
+.qrscan {
+  z-index: 6;
+}
+
+.leek {
+  z-index: 7;
+}
+
+.pineapple {
+  z-index: 8;
+}
+
+.baguette {
+  z-index: 9;
+}
+
+.milk {
+  z-index: 10;
+}
+
+.chicken {
+  z-index: 11;
+}
+
+.fish {
+  z-index: 12;
+}
+
+.chips {
+  z-index: 13;
+}
+
+.sourdough {
+  z-index: 14;
+}
+
+.egg {
+  z-index: 15;
+}
+
+.kurlylogo {
+  z-index: 16;
+}
+
+.memo {
+  z-index: 17;
+}
+
+.pricetag {
+  z-index: 18;
+}
+
+/* ---- 개별 요소 ---- */
+
+/* 배경 Kurly 타이포 */
+.kurlybg {
+  width: 1586px;
+  height: 1026px;
+  top: 0px;
+  left: 337px;
+}
+
+/* 메인 카피 */
+.main-onsale {
+  width: 260.6422px;
+  height: 173.6px;
+  top: 300.1px;
+  left: 39.9px;
+}
+
+.main-bf {
+  width: 366.211px;
+  height: 171.9001px;
+  top: 521.1px;
+  left: 44.3px;
+}
+
+.main-date {
+  width: 345.929px;
+  height: 40.338px;
+  top: 742px;
+  left: 43.9px;
+}
+
+/* 회색 ON */
+.on {
+  width: 141.932px;
+  height: 74.6px;
+}
+
+.on-1 {
+  top: 300px;
+  left: 216px;
+}
+
+.on-2 {
+  top: 300px;
+  left: 381px;
+}
+
+.on-3 {
+  top: 300px;
+  left: 1600px;
+}
+
+.on-4 {
+  top: 300px;
+  left: 1765px;
+}
+
+.onsale {
+  top: 300px;
+  left: 1433px;
+}
+
+.sale-1 {
+  top: 399px;
+  left: 321px;
+}
+
+.sale-2 {
+  top: 399px;
+  left: 1714px;
+}
+
+/* 회색 BLACK FRIDAY */
+.bf {
+  width: 366.211px;
+  height: 171.9px;
+}
+
+.bf-1 {
+  top: 521px;
+  left: 417px;
+}
+
+.bf-2 {
+  top: 521px;
+  left: 1437px;
+}
+
+.bf-3 {
+  top: 521px;
+  left: 1810px;
+}
+
+/* 회색 DATE */
+.date {
+  width: 345.929px;
+  height: 40.338px;
+}
+
+.date-1 {
+  top: 742px;
+  left: 409px;
+}
+
+.date-2 {
+  top: 742px;
+  left: 1437px;
+}
+
+.date-3 {
+  top: 742px;
+  left: 1802px;
+}
+
+/* .date-4 {
+  top: 817px;
+  left: 43.9px;
+}
+
+.date-5 {
+  top: 817px;
+  left: 409px;
+} */
+
+/* 스티커 & QR */
+.stickerpairs {
+  width: 329.522px;
+  height: auto;
+  top: 790px;
+  left: 360px;
+}
+
+.kurlyqr {
+  width: 131px;
+  height: auto;
+  top: 906px;
+  left: 38px;
+}
+
+.qrscan {
+  width: 97.75px;
+  height: auto;
+  top: 1047px;
+  left: 54.7px;
+}
+
+/* 장바구니 */
+.cartshadow {
+  width: 1040px;
+  height: auto;
+  top: 305px;
+  left: 525px;
+}
+
+.cart {
+  width: 1044.745px;
+  height: auto;
+  top: 272px;
+  left: 471px;
+}
+
+/* 제품들 */
+.leek {
+  width: auto;
+  height: 442px;
+  top: 430px;
+  left: 380px;
+  transform: rotate(-6deg);
+}
+
+.baguette {
+  width: auto;
+  height: 694.169px;
+  top: 160px;
+  left: 470px;
+}
+
+.chips {
+  width: auto;
+  height: 413.778px;
+  top: 470px;
+  left: 600px;
+}
+
+.milk {
+  width: auto;
+  height: 419.461px;
+  top: 337px;
+  left: 750px;
+}
+
+.sourdough {
+  width: auto;
+  height: 326px;
+  top: 539px;
+  left: 810px;
+}
+
+.fish {
+  width: auto;
+  height: 365.996px;
+  top: 406px;
+  left: 910px;
+}
+
+.chicken {
+  width: auto;
+  height: 340px;
+  top: 548px;
+  left: 903px;
+}
+
+.pineapple {
+  width: auto;
+  height: 650px;
+  top: 100px;
+  left: 970px;
+}
+
+.egg {
+  width: 250px;
+  height: auto;
+  top: 484px;
+  left: 1153px;
+}
+
+/* 로고 */
+.kurlylogo {
+  width: 623px;
+  height: 403px;
+  top: -25px;
+  left: 681px;
+}
+
+/* 메모 & 세일 태그 */
+.memo {
+  width: auto;
+  height: 500px;
+  top: 570px;
+  left: 1332px;
+}
+
+.pricetag {
+  width: 207.649px;
+  height: auto;
+  top: 875px;
+  left: 1322px;
+}
