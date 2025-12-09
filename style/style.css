@@ -1,11 +1,3 @@
-.poster {
-  width: 1920px;
-  height: 1080px;
-  background: #fff;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 /* 기본 리셋 */
 * {
   margin: 0;
@@ -30,6 +22,7 @@ body {
   width: 1920px;
   height: 1080px;
   background: #fff;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -370,19 +363,12 @@ body {
   left: 1206px;
 }
 
-/* --------- 컬러 변수 --------- */
 :root {
-  --kurly-purple: #5f0080; /* 불 켜진 보라 */
-  --kurly-gray-main: rgba(0, 0, 0, 0.2); /* 메인 글자 꺼졌을 때(20% 검정) */
-  --kurly-gray-side: #000000; /* 사이드 글자용 (SVG에 이미 0.2 opacity 있음) */
+  --kurly-purple: #5f0080;
+  --kurly-gray-main: rgba(0, 0, 0, 0.2);
+  --kurly-gray-side: #000000;
 }
 
-/* ================================
-   1) 기본 색 세팅
-   ================================ */
-
-/* 사이드 텍스트들: on 복제 + onsale + sale-1,2 + bf-1~3 + date-1~5
-   → SVG 안에서 opacity 0.2라서 CSS에선 그냥 #000만 줘야 최종 20% 됨 */
 .on-1 path,
 .on-2 path,
 .on-3 path,
@@ -397,22 +383,16 @@ body {
 .date-2 path,
 .date-3 path {
   fill: var(--kurly-gray-side);
-  transition: fill 0.5s linear, fill-opacity 0.5s linear;
+  transition: fill 0.5s ease, fill-opacity 0.5s ease;
 }
 
-/* 메인 3개만 기본 보라 */
 .main-onsale path,
 .main-bf path,
 .main-date path {
   fill: var(--kurly-purple);
-  transition: fill 0.5s linear, fill-opacity 0.5s linear;
+  transition: fill 0.5s ease, fill-opacity 0.5s ease;
 }
 
-/* ================================
-   2) 메인 ↔ 사이드 순차 하이라이트 (버전2)
-   ================================ */
-
-/* 메인: 0~50% 동안 보라색 켜짐(5초), 나머지 구간은 꺼짐 */
 @keyframes highlight-main-phase {
   0%,
   50% {
@@ -424,7 +404,6 @@ body {
   }
 }
 
-/* 1그룹: on-1, sale-1, bf-1, date-1 → 50~60% 구간 (1초)만 보라 */
 @keyframes highlight-side-1 {
   0%,
   50% {
@@ -443,7 +422,6 @@ body {
   }
 }
 
-/* 2그룹: on-2, onsale, bf-2, date-2 → 60~70% 구간만 보라 */
 @keyframes highlight-side-2 {
   0%,
   60% {
@@ -462,7 +440,6 @@ body {
   }
 }
 
-/* 3그룹: on-3, sale-2, bf-3, date-3 → 70~80% 구간만 보라 */
 @keyframes highlight-side-3 {
   0%,
   70% {
@@ -481,8 +458,6 @@ body {
   }
 }
 
-/* 4그룹: on-4, date-4, date-5 → 80~90% 구간만 보라
-   (나머지 90~100%는 전부 꺼진 상태로 넘어가다가 다음 루프에서 메인이 다시 5초 켜짐) */
 @keyframes highlight-side-4 {
   0%,
   80% {
@@ -501,53 +476,42 @@ body {
   }
 }
 
-/* ================================
-   3) 애니메이션 적용
-   ================================ */
-
-/* 메인 카피 3개: ON SALE / BLACK FRIDAY / DATE
-   → 0~50% 구간(5초) 동안만 보라, 나머지 5초는 꺼짐 */
 .main-onsale path,
 .main-bf path,
 .main-date path {
-  animation: highlight-main-phase 6s linear infinite;
-  animation-delay: 5s; /* 처음 5초는 아예 아무 애니메이션 없이 기본 상태 유지 */
+  animation: highlight-main-phase 6s ease infinite;
+  animation-delay: 5s;
 }
 
-/* 1그룹: on-1, sale-1, bf-1, date-1 */
 .on-1 path,
 .sale-1 path,
 .bf-1 path,
 .date-1 path {
-  animation: highlight-side-1 6s linear infinite;
+  animation: highlight-side-1 6s ease infinite;
   animation-delay: 5s;
 }
 
-/* 2그룹: on-2, onsale, bf-2, date-2 */
 .on-2 path,
 .onsale path,
 .bf-2 path,
 .date-2 path {
-  animation: highlight-side-2 6s linear infinite;
+  animation: highlight-side-2 6s ease infinite;
   animation-delay: 5s;
 }
 
-/* 3그룹: on-3, sale-2, bf-3, date-3 */
 .on-3 path,
 .sale-2 path,
 .bf-3 path,
 .date-3 path {
-  animation: highlight-side-3 6s linear infinite;
+  animation: highlight-side-3 6s ease infinite;
   animation-delay: 5s;
 }
 
-/* 4그룹: on-4, date-4, date-5 */
 .on-4 path {
-  animation: highlight-side-4 6s linear infinite;
+  animation: highlight-side-4 6s ease infinite;
   animation-delay: 5s;
 }
 
-/* ▶ 그로서리 아이템 공통 */
 .leek,
 .baguette,
 .chips,
@@ -557,11 +521,9 @@ body {
 .chicken,
 .pineapple,
 .egg {
-  transform: translateY(30px); /* 기본: 살짝 아래 */
-  transition: transform 0.15s ease-out;
+  transform: translateY(0);
 }
 
-/* ▶ hover 시 위로 이동 */
 .leek:hover,
 .baguette:hover,
 .chips:hover,
@@ -571,7 +533,8 @@ body {
 .chicken:hover,
 .pineapple:hover,
 .egg:hover {
-  transform: translateY(0); /* 제자리(위로 올라온 느낌) */
+  transform: translateY(-30px);
+  transition: transform 0.15s ease-out;
 }
 
 .memo:hover {
@@ -591,6 +554,6 @@ body {
 }
 
 .pricetag:hover {
-  animation: pricetagrotate 0.2s linear infinite;
+  animation: pricetagrotate 0.2s ease infinite;
   transition: transform 0.3s ease-out;
 }
